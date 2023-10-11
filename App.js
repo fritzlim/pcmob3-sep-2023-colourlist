@@ -6,11 +6,18 @@ import { NavigationContainer } from "@react-navigation/native";
 import BlockRGB from "./components/BlockRGB";
 
 function HomeScreen() {
-  const [colorArray, setColorArray] = useState([
-    { red: 255, green: 0, blue: 0, id: "0" },
-    { red: 0, green: 255, blue: 0, id: "1" },
-    { red: 0, green: 0, blue: 255, id: "2" },
-  ]);
+  // const [colorArray, setColorArray] = useState([
+  //   { red: 255, green: 0, blue: 0, id: "0" },
+  //   { red: 0, green: 255, blue: 0, id: "1" },
+  //   { red: 0, green: 0, blue: 255, id: "2" },
+  // ]);
+
+  // For starting with no colours on the screen.
+  const [colorArray, setColorArray] = useState([]);
+
+  function resetColors() {
+    setColorArray([]);
+  }
 
   // Note that this renderItem() is inside HomeScreen().
   function renderItem({ item }) {
@@ -36,6 +43,12 @@ function HomeScreen() {
         onPress={addColor}
       >
         <Text style={{ color: "red" }}>Add colour</Text>
+      </Pressable>
+      <Pressable
+        style={{ height: 40, justifyContent: "center" }}
+        onPress={resetColors}
+      >
+        <Text style={{ color: "red" }}>Reset</Text>
       </Pressable>
       <FlatList
         style={{ width: "100%" }}
