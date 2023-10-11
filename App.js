@@ -19,7 +19,7 @@ function HomeScreen({ navigation }) {
     });
   });
 
-  useEffect(() => {});
+  useEffect(() => {}); // We can have as many useEffect hooks as we want.
 
   // const [colorArray, setColorArray] = useState([
   //   { red: 255, green: 0, blue: 0, id: "0" },
